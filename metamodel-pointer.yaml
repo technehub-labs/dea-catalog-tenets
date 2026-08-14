@@ -1,25 +1,25 @@
-# Metamodel Pointer — Principle
-# Auto-generated from OpenDEAM v0.2.1 (dea-architecture-framework, ADR-0002).
+# Metamodel Pointer — Tenet
+# Auto-generated from OpenDEAM v0.4.0 (dea-architecture-framework, ADR-0004).
 # Do not edit manually — allocation changes go through the root model
 # (structural: ADR + minor bump; additive: PR + patch bump).
 metamodel:
-  version: v0.2.1
-  entity_id: dea:entity-principle
-  class_alias: PR
+  version: v0.4.0
+  entity_id: dea:entity-tenet
+  class_alias: TNT
   layer: L2
   building_block: L2-rules-guidance
-  viewer_url: "https://technehub-labs.github.io/metamodel/?entity=PR"
+  viewer_url: "https://technehub-labs.github.io/metamodel/?entity=TNT"
 
 catalog:
-  name: Principle
-  repo: technehub-labs/dea-catalog-principles
+  name: Tenet
+  repo: technehub-labs/dea-catalog-tenets
   status: planned
 
 description: |
-  An architectural guiding principle (e.g. API-first, data sovereignty).
+  A non-binding, human-authored belief that guides decisions (e.g. API-first, prefer managed services). Informs one or more Guardrails; enforces nothing on its own. Renamed from Principle in v0.4.0 (ADR-0004 D3).
 
 links:
   metamodel_repo: https://github.com/technehub-labs/dea-metamodel
   root_model: https://github.com/technehub-labs/dea-architecture-framework
-  viewer: "https://technehub-labs.github.io/metamodel/?entity=PR"
-  github: https://github.com/technehub-labs/dea-catalog-principles
+  viewer: "https://technehub-labs.github.io/metamodel/?entity=TNT"
+  github: https://github.com/technehub-labs/dea-catalog-tenets
