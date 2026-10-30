@@ -1,35 +1,27 @@
-# Contributing to `dea-catalog-processes`
+# Contributing to dea-catalog-tenets
 
-Minimal. The cardinal rules govern the only contribution shape matters
-for this repository.
+## Change control
 
-## Authorship
+Every change lands through a change request (CR) in `change-requests/`
+carried by a pull request against `main`. CR format follows the house
+pattern (metadata table, numbered sections, out-of-scope list, verifiable
+acceptance criteria); every CR registers a row in `change-requests/README.md`.
 
-Every authorship-bearing field in this repository must carry
-`Emmanuel A. Otchere` (or, for org-level CFF entries, `TechNeHub Labs`).
-The string `Coder`, `Agent`, `Hermes`, `Claude`, `GPT`, `Cline`, `OpenAI`,
-`MiniMax`, `MiniMax-M3`, or any other agent/tool name is forbidden in
-any authorship-bearing field of any published artifact.
+## Workflow
 
-This rule is enforced by gate [32] (`scripts/check_authorship.py`,
-blocking). It is data-driven from
-`reconciliation/authorship-fields.yaml`. The full rule statement lives
-in `docs/governance/cardinal-rules.md`.
+1. Branch: `feat/CR-TNT-CAT-NN-short-title`.
+2. Implement; regenerate the index when entity content changes.
+3. Run the gates locally (README §Local validation). All must print `Findings: 0`.
+4. Open a pull request; CI runs the same gates plus the allocation
+   validator and the authorship gate.
+5. Verify checks are green before merge.
 
-If your contribution introduces a new authorship-bearing field, extend
-the registry in the same PR; the gate will block the change otherwise.
+## Authorship cardinal rule
 
-## How to land work
+Every authorship-bearing field carries `Emmanuel A. Otchere` or
+`TechNeHub Labs` — never an agent or tool name (AUT-001..003 gate).
 
-1. Open a `feature/...`, `fix/...`, or `refactor/...` branch.
-2. Develop, test, commit.
-3. Open a PR; CI runs all 32 conformance gates. Address any failures
-   before requesting review.
-4. Squash-merge on approval; the branch is auto-deleted.
+## Pointer and index discipline
 
-## Cardinal-rules reference
-
-- [docs/governance/cardinal-rules.md](docs/governance/cardinal-rules.md)
-- `reconciliation/authorship-fields.yaml`
-- `scripts/check_authorship.py` (gate [32])
-- `change-requests/CR-BP-118-authorship-cardinal-rule.md`
+`metamodel-pointer.yaml` allocation changes go through the root model.
+`CATALOG.yaml` is machine-generated; regenerate, never hand-edit.
